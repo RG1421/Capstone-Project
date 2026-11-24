@@ -1,0 +1,51 @@
+/* Tampilan dasar. Boleh diubah sesuai seleramu; utamakan layar HP. */
+:root {
+  --latar: #f4f6fb;
+  --kartu: #ffffff;
+  --teks: #1b2333;
+  --redup: #5e6a7f;
+  --garis: #d9dfea;
+  --utama: #2b4c7e;
+  --bahaya: #b23a3a;
+  --sukses: #2f7a4f;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--latar);
+  color: var(--teks);
+  line-height: 1.5;
+}
+
+.atas { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--utama); color: #fff; }
+.merek { flex: 1; font-size: 18px; }
+.lencana { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.18); }
+.lencana.offline { background: #f3c26b; color: #3b2a07; }
+
+main { max-width: 640px; margin: 0 auto; padding: 16px; display: grid; gap: 14px; }
+.kartu { background: var(--kartu); border: 1px solid var(--garis); border-radius: 14px; padding: 16px; }
+.kartu.kecil { font-size: 13px; color: var(--redup); }
+h2 { font-size: 17px; margin: 0 0 10px; }
+h3 { font-size: 14px; margin: 14px 0 6px; color: var(--redup); }
+.status { margin: 0; font-size: 13px; color: var(--redup); min-height: 1.5em; }
+
+form { display: grid; gap: 10px; }
+.baris { grid-template-columns: 1fr auto auto; }
+label { display: grid; gap: 4px; font-size: 13px; color: var(--redup); }
+input, button { font: inherit; }
+input { padding: 10px 12px; border: 1px solid var(--garis); border-radius: 10px; min-width: 0; }
+button { cursor: pointer; border: 0; border-radius: 10px; padding: 10px 14px; background: var(--utama); color: #fff; }
+button.sekunder { background: transparent; color: inherit; border: 1px solid currentColor; }
+.aksi { display: flex; gap: 8px; flex-wrap: wrap; }
+.pesan { margin: 0; padding-left: 18px; color: var(--bahaya); font-size: 13px; }
+
+.daftar { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.agenda { display: flex; align-items: center; gap: 10px; padding: 10px; border: 1px solid var(--garis); border-radius: 10px; }
+.agenda span { flex: 1; }
+.agenda time { font-size: 12px; color: var(--redup); }
+.agenda.selesai span { text-decoration: line-through; color: var(--redup); }
+.agenda .hapus { background: none; color: var(--bahaya); padding: 4px 8px; }
+#cek-pwa { margin: 0; padding-left: 18px; }
+@media (max-width: 420px) { .baris { grid-template-columns: 1fr; } }

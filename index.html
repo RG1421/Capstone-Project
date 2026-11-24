@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2b4c7e" />
+    <title>Agenda Pribadi</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <header class="atas">
+      <strong class="merek">Agenda Pribadi</strong>
+      <span id="status-jaringan" class="lencana">Online</span>
+      <button id="tombol-keluar" type="button" class="sekunder" hidden>
+        Keluar
+      </button>
+    </header>
+
+    <main>
+      <p id="status" class="status" role="status"></p>
+
+      <section id="bagian-masuk" class="kartu">
+        <h2>Masuk</h2>
+        <form id="form-akun" novalidate>
+          <label
+            >Email <input id="isi-email" type="email" autocomplete="email"
+          /></label>
+          <label
+            >Kata sandi
+            <input
+              id="isi-sandi"
+              type="password"
+              autocomplete="current-password"
+          /></label>
+          <div class="aksi">
+            <button type="submit">Masuk</button>
+            <button id="tombol-daftar" type="button" class="sekunder">
+              Daftar akun baru
+            </button>
+          </div>
+          <ul id="pesan-akun" class="pesan"></ul>
+        </form>
+      </section>
+
+      <section id="bagian-agenda" class="kartu" hidden>
+        <h2>Agenda</h2>
+        <form id="form-agenda" class="baris">
+          <input
+            id="isi-judul"
+            placeholder="Apa yang perlu dikerjakan?"
+            aria-label="Judul agenda"
+            maxlength="120"
+          />
+          <input id="isi-tenggat" type="date" aria-label="Tenggat" />
+          <button type="submit">Tambah</button>
+        </form>
+        <div id="daftar-agenda"></div>
+      </section>
+
+      <section class="kartu kecil">
+        <h2>Kesiapan PWA</h2>
+        <ul id="cek-pwa"></ul>
+      </section>
+    </main>
+    <script src="app.js"></script>
+    <script src="penghubung.js"></script>
+  </body>
+</html>
